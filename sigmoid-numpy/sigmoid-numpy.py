@@ -4,7 +4,7 @@ def sigmoid(x):
     """
     Vectorized sigmoid function.
     """
-    x = np.array(x)
+    x = np.asarray(x, dtype=float)
     return np.divide(
         1, 
         1 + np.exp(-x)
