@@ -14,7 +14,7 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
 
     # add pad_value as many times as max_len-len(seq), if it is negative no pad value is added
     final = [
-        seq[:max_len]+[pad_value]*(max_len-len(seq)) 
+        seq[:max_len] + [pad_value]*(max_len-len(seq)) 
         for seq in seqs
     ]
     return np.asarray(final)
