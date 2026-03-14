@@ -12,10 +12,9 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
     # handle if max_len is None
     max_len = max(len(seq) for seq in seqs) if max_len is None else max_len
 
-    # add pad_value as many times as |max_len-len(seq)|
+    # add pad_value as many times as max_len-len(seq), if it is negative no pad value is added
     final = [
         seq[:max_len]+[pad_value]*(max_len-len(seq)) 
-        if max_len-len(seq) >= 0 else seq[:max_len]
         for seq in seqs
     ]
     return np.asarray(final)
